@@ -10,7 +10,7 @@ public abstract class Paths {
 	protected int edgeTo[];
 	private int source;
 	protected int distTo[];
-
+	private int teste;
 	public Paths(Graph graph, int source) {
 		this.source = source;
 

@@ -5,9 +5,9 @@ import java.util.Iterator;
 import br.edu.uni7.aed2.graph.Graph;
 
 public class ConnectedComponents {
-	private int count;
-	private int[] id;
-	private boolean[] marked;
+	private int count; // contador para rotular
+	private int[] id; //a que componentes cada vertice pertence
+	private boolean[] marked;//rastrear quem ja visitou
 
 	public ConnectedComponents(Graph graph) {
 		count = 0;

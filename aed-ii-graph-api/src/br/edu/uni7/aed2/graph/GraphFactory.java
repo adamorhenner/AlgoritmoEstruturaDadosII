@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public abstract class GraphFactory {
-	private static enum GraphType {
+	private static enum GraphType { 
 		AsList, AsMatrix
 	};
 
@@ -38,7 +38,7 @@ public abstract class GraphFactory {
 				String line = reader.readLine();
 
 				if (count < 1) {
-					if ((line == null) || line.trim().isEmpty()) {
+					if ((line == null) || line.trim().isEmpty()) {//trim remove os espa�os
 						throw new IllegalArgumentException("Número de vértices inválido na linha: " + (count + 1));
 					}
 
@@ -57,7 +57,7 @@ public abstract class GraphFactory {
 					}
 
 				} else {
-					String[] values = line.split(" ");
+					String[] values = line.split(" ");//split: vai quebrar onde tem " " espa�o e converter em array
 					if ((values == null) || (values.length < 2)) {
 						throw new IllegalArgumentException("Formato de arquivo inválido na linha: " + (count + 1));
 					}
@@ -66,7 +66,7 @@ public abstract class GraphFactory {
 					int w = -1;
 
 					try {
-						v = Integer.parseInt(values[0]);
+						v = Integer.parseInt(values[0]);//Convesao de string para inteiro
 						w = Integer.parseInt(values[1]);
 					} catch (NumberFormatException e) {
 						throw new IllegalArgumentException(

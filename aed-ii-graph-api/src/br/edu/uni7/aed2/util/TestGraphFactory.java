@@ -13,7 +13,7 @@ public class TestGraphFactory {
 		Graph g2 = factory.newGraphAsList(10);
 		
 		Graph g1 = factory.newGraphAsMatrix(
-				"/home/roberio/eclipse-workspace/aed-ii-graph-api/src/resources/graph-noite.txt");
+				"C:\\Users\\Adamor\\git\\AlgoritmoEstruturaDadosII\\aed-ii-graph-api\\src\\resources\\graph-noite.txt");
 		
 		System.out.println("Vértices: " + g1.getNumberOfVertices());
 		System.out.println("Arestas: " + g1.getNumberOfEdges());

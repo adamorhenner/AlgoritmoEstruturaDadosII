@@ -6,7 +6,7 @@ import java.util.List;
 public class BinHeap {
 	private static final int FIRST = 1;
 	private List<Integer> heapList;
-	private Integer currentSize;
+	private int currentSize;
 	
 	public BinHeap() {
 		heapList = new ArrayList<Integer>();
@@ -14,6 +14,45 @@ public class BinHeap {
 		currentSize = 0;	
 	}
 	
+	public Integer delMin() {
+		Integer retval = heapList.get(FIRST);
+		heapList.set(FIRST, heapList.get(currentSize));
+		heapList.remove(currentSize);
+		currentSize--;
+		
+		percDown(FIRST);
+		
+		return retval;
+	}
+	
+	private void percDown(int i) {
+		while (i * 2 <= currentSize) {
+			int mc = minChild(i);
+			
+			if(heapList.get(i) > heapList.get(mc)) {
+				Integer tmp = heapList.get(i);
+				heapList.set(i, heapList.get(mc));
+				heapList.set(mc, tmp);
+			}
+			
+			i = mc;
+		}
+	}
+
+	private int minChild(int i) {
+		int result =  -1;
+		
+		if ((i * 2 + 1)> currentSize) {
+			result = i * 2;
+		} else if (heapList.get(2 * i) < heapList.get(2 * i + 1)) {
+			result = 2 * i + 1 ;
+		} else {
+			result = 2 * i + 1;
+		}
+
+		return result;
+	}
+
 	public Integer findMin() {
 		return heapList.get(FIRST);
 	}

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BinHeap {
+	private static final int FIRST = 1;
 	private List<Integer> heapList;
 	private Integer currentSize;
 	
@@ -14,7 +15,7 @@ public class BinHeap {
 	}
 	
 	public Integer findMin() {
-		return heapList.get(1);
+		return heapList.get(FIRST);
 	}
 	
 	public boolean isEmpty() {

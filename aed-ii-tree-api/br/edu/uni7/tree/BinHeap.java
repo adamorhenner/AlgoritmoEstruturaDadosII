@@ -40,12 +40,12 @@ public class BinHeap {
 	}
 
 	private int minChild(int i) {
-		int result =  -1;
+		int result = - 1;
 		
 		if ((i * 2 + 1)> currentSize) {
 			result = i * 2;
 		} else if (heapList.get(2 * i) < heapList.get(2 * i + 1)) {
-			result = 2 * i + 1 ;
+			result = 2 * i;
 		} else {
 			result = 2 * i + 1;
 		}
